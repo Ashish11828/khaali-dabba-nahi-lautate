@@ -1,0 +1,55 @@
+- !<AssetImportMetadata/f3d9f218-53ec-4702-b774-982f3bf4e99c>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> d4b3eb1b-8887-4adb-9bd0-3fb4e19ba6b0
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> d4b3eb1b-8887-4adb-9bd0-3fb4e19ba6b0
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 5ed2e467-46e8-4bbc-9ce3-61453065db53
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/5ed2e467-46e8-4bbc-9ce3-61453065db53>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: 159fbfcc-59ae-4c9c-8c4c-2f8cf7202775
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    reticle: false
+    targetRoot: false
+    useHandRay: false
+    worldCamera: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - targetRoot: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      worldCamera: !<reference.Camera> 00000000-0000-0000-0000-000000000000
+      reticle: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      useHandRay: false
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input SceneObject targetRoot
+    - // @input Component.Camera worldCamera
+    - // @input SceneObject reticle
+    - // @input bool useHandRay

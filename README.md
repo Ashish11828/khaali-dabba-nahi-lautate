@@ -1,0 +1,45 @@
+# Khaali Dabba Nahi Lautate
+
+**खाली डब्बा नहीं लौटाते — an everyday Indian magic story for Specs.**
+
+Sharma Aunty sends you a steel dabba of homemade laddoos. When the sweets are gone, a miniature Indian neighborhood emerges. Meet its residents, choose a thoughtful return gesture, and watch kindness travel from home to home.
+
+> Dabba khaali tha. Rishta nahi.
+
+## Play the project
+
+1. Clone this repository and open `HACKPROJECT.esproj` in **Lens Studio 5.24.1 or a compatible newer version**.
+2. Let Lens Studio import the assets and packaged dependencies.
+3. For Editor testing, choose **SPECS 27 → Interactive** in Preview. The Editor uses authored placement; physical table scanning requires glasses.
+4. Pinch the lid, select the three laddoos, explore the three homes, and carry a food plate, thank-you note, or chai invitation into the dabba. Close the lid to see the ending. Pinch the diya to replay.
+
+SIK supplies supported hand targeting and pinch interactions. The project does not require eye tracking. Normal play is untimed, designed for about 3–4 minutes of exploration.
+
+## What is implemented
+
+- Separate steel dabba and animated lid, besan laddoos, and readable Hindi paper note.
+- Staggered miniature neighborhood reveal, balconies, plants, clotheslines, residents, opening doors, and cascading window lights.
+- Three resident stories and three animated gesture endings.
+- Physical gift pickup, drag and release, missed-drop recovery, and replay.
+- Original generated music and sound effects; optional inputs for recorded Hindi narration.
+- Approximately 77-second automatic concept demo: enable `demoMode` on `KhaaliDabbaGame`. Leave it disabled for interactive play.
+
+## Source
+
+| File | Responsibility |
+|---|---|
+| `Assets/KhaaliDabba/KhaaliDabbaGame.ts` | Story state, interactions and animations |
+| `Assets/KhaaliDabba/KhaaliGeometry.ts` | Lightweight articulated procedural geometry |
+| `Assets/KhaaliDabba/KhaaliDabbaPlacement.ts` | WorldQuery surface placement and pinch guards |
+| `Assets/KhaaliDabba/KhaaliDabbaUI.ts` | UIKit spatial subtitles and Hindi note |
+| `Assets/KhaaliDabba/Materials/` | Steel shaders and materials |
+| `Assets/GeneratedSFX/` | Music, sound cues and PCM verification |
+| `Packages/` | Pinned Lens Studio dependency packages and metadata |
+
+See [play guide](Assets/KhaaliDabba/README.md), [validation report](Assets/KhaaliDabba/VALIDATION.md), and [polish notes](Assets/KhaaliDabba/POLISH.md).
+
+## Validation and limits
+
+Compilation, runtime startup, all three endings, gift manipulation, missed-drop recovery and replay were checked in Lens Studio Preview. Physical table placement, stereo comfort and sustained performance still need on-glasses testing. Hindi text is included; recorded Hindi narration is not included. Visuals are a stylized playable prototype.
+
+Lens Studio regenerates `Cache/` and `Support/` after opening the project. Local MCP credentials, editor workspaces and generated caches are excluded from Git. Vendor SDK packages remain subject to their own terms; no license is granted here for those dependencies.

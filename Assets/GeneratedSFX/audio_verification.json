@@ -1,0 +1,84 @@
+{
+  "tool": "PCM16 direct scan; ffmpeg unavailable (VERIFY_TOOL_MISSING)",
+  "voices": "No installed Hindi voice. System.Speech enumeration failed; registry contains English GB/US/India voices only.",
+  "composition": {
+    "meta": {
+      "genre": "folk",
+      "seed": 453247426,
+      "scale": "pentatonicMajor",
+      "key": "G3",
+      "progression": [
+        "I",
+        "IV",
+        "I",
+        "V"
+      ],
+      "voicing": "spread",
+      "extension": "none",
+      "voicingMode": "centroid"
+    },
+    "bpm": 108
+  },
+  "files": [
+    {
+      "file": "courtyard_utensils_ambience.wav",
+      "seconds": 24,
+      "channels": 2,
+      "rate": 44100,
+      "bits": 16,
+      "peakDb": -9.37,
+      "rmsDb": -23.94,
+      "bytes": 4233644
+    },
+    {
+      "file": "dabba_lid_clink.wav",
+      "seconds": 1.8,
+      "channels": 2,
+      "rate": 44100,
+      "bits": 16,
+      "peakDb": -1.11,
+      "rmsDb": -20.99,
+      "bytes": 317564
+    },
+    {
+      "file": "laddoo_pickup.wav",
+      "seconds": 0.9,
+      "channels": 2,
+      "rate": 44100,
+      "bits": 16,
+      "peakDb": -1.94,
+      "rmsDb": -28.59,
+      "bytes": 158804
+    },
+    {
+      "file": "neighborhood_reveal.wav",
+      "seconds": 5.5,
+      "channels": 2,
+      "rate": 44100,
+      "bits": 16,
+      "peakDb": -1.11,
+      "rmsDb": -18.25,
+      "bytes": 970244
+    },
+    {
+      "file": "warm_ending_chime.wav",
+      "seconds": 4.5,
+      "channels": 2,
+      "rate": 44100,
+      "bits": 16,
+      "peakDb": -1.11,
+      "rmsDb": -19.97,
+      "bytes": 793844
+    },
+    {
+      "file": "warm_plucked_neighborhood_bed.wav",
+      "seconds": 27,
+      "channels": 2,
+      "rate": 44100,
+      "bits": 16,
+      "peakDb": -2.16,
+      "rmsDb": -23.99,
+      "bytes": 4762844
+    }
+  ]
+}

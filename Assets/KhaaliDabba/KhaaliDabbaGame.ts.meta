@@ -1,0 +1,97 @@
+- !<AssetImportMetadata/efbe2fbc-e305-45fb-814e-e04df9c92dca>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> d938943b-3949-44f6-8284-831e1338a418
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> d938943b-3949-44f6-8284-831e1338a418
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> e9916a5e-18f0-424d-adc3-c1021a98254e
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/e9916a5e-18f0-424d-adc3-c1021a98254e>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: 89738f74-c64e-48dd-9af2-76befa6c2ce1
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    ambient: false
+    clink: false
+    contentRoot: false
+    demoMode: false
+    ending: false
+    finalVoice: false
+    hindiFont: false
+    houseRevealStagger: false
+    material: false
+    music: false
+    pickup: false
+    placement: false
+    reminderVoice: false
+    reveal: false
+    revealSeconds: false
+    steelMaterial: false
+    uiRoot: false
+    welcomeVoice: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - material: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      steelMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      contentRoot: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      uiRoot: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      placement: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
+      hindiFont: !<reference.Font> 00000000-0000-0000-0000-000000000000
+      clink: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      pickup: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      reveal: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      ending: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      ambient: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      music: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      welcomeVoice: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      reminderVoice: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      finalVoice: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      demoMode: false
+      revealSeconds: !<float> 4.000000
+      houseRevealStagger: 0.600000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @input Asset.Material material {"hint":"Vertex-color material for the miniature world"}'
+    - '// @input Asset.Material steelMaterial {"hint":"Reflective SimplePBR steel material"}'
+    - '// @input SceneObject contentRoot {"hint":"Table-relative root: centimetres, tabletop at local Y zero"}'
+    - '// @input SceneObject uiRoot {"hint":"World-space subtitle root above the dabba"}'
+    - '// @input AssignableType_1 placement {"hint":"Optional real-table surface placement manager"}'
+    - '// @input Asset.Font hindiFont {"hint":"Font supporting Devanagari and Latin"}'
+    - '// @input Component.AudioComponent clink {"hint":"Steel lid sound"}'
+    - '// @input Component.AudioComponent pickup {"hint":"Laddoo and hover feedback"}'
+    - '// @input Component.AudioComponent reveal {"hint":"Magical reveal sound"}'
+    - '// @input Component.AudioComponent ending {"hint":"Ending sound"}'
+    - '// @input Component.AudioComponent ambient {"hint":"Neighborhood ambience"}'
+    - '// @input Component.AudioComponent music {"hint":"Warm instrumental score"}'
+    - '// @input Component.AudioComponent welcomeVoice {"hint":"Optional recorded Hindi welcome; subtitles always remain available"}'
+    - '// @input Component.AudioComponent reminderVoice {"hint":"Optional recorded Arre beta, khaali dabba nahi lautate dialogue"}'
+    - '// @input Component.AudioComponent finalVoice {"hint":"Optional recorded Dabba khaali tha, rishta nahi finale"}'
+    - '// @input bool demoMode {"hint":"Enable automatic 80-second demo. Leave off for normal play."}'
+    - '// @input float revealSeconds = 4 {"hint":"Neighborhood reveal animation duration in seconds"}'
+    - '// @input float houseRevealStagger = 0.6 {"hint":"Delay between each miniature building rising, in seconds"}'

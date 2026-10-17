@@ -1,0 +1,31 @@
+# Generated Lens Studio state
+/Cache/
+/Support/
+/Workspaces/
+/PluginsUserPreferences/
+*.lock
+/.virtual-scene.json
+/.font_tmp/
+
+# Local assistant configuration and credentials
+/.mcp.json
+/ls-live-instance.json*
+/.codex/
+/.claude/
+/.cursor/
+/.vscode/
+/.clad/
+
+# Development exports and local generator copies
+/Assets/GitHubRelease/
+/Assets/KhaaliDabbaTools/
+
+# Local secrets and OS files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.DS_Store
+Thumbs.db
+node_modules/
