@@ -92,6 +92,6 @@
     - '// @input Component.AudioComponent welcomeVoice {"hint":"Optional recorded Hindi welcome; subtitles always remain available"}'
     - '// @input Component.AudioComponent reminderVoice {"hint":"Optional recorded Arre beta, khaali dabba nahi lautate dialogue"}'
     - '// @input Component.AudioComponent finalVoice {"hint":"Optional recorded Dabba khaali tha, rishta nahi finale"}'
-    - '// @input bool demoMode {"hint":"Enable automatic 80-second demo. Leave off for normal play."}'
+    - '// @input bool demoMode {"hint":"Enable automatic approximately 85-second demo. Leave off for normal play."}'
     - '// @input float revealSeconds = 4 {"hint":"Neighborhood reveal animation duration in seconds"}'
     - '// @input float houseRevealStagger = 0.6 {"hint":"Delay between each miniature building rising, in seconds"}'

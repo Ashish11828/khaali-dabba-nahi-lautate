@@ -54,7 +54,50 @@ export function plant(g:Geometry,x:number,y:number,z:number) {
   g.box(x,y+1.05,z,0.12,1,0.12,C.green);
   for(let j=0;j<4;j++){const a=j*Math.PI/2;g.sphere(x+Math.cos(a)*0.35,y+1+j*0.11,z+Math.sin(a)*0.35,0.35,C.green,6,4);}
 }
-export function building(parent:SceneObject,index:number,mat:Material):{root:SceneObject,door:SceneObject,resident:SceneObject,window:SceneObject,accent:SceneObject} {
+
+/** Separate spatial targets in front of the homes, outside the building colliders. */
+export function householdClue(parent:SceneObject,index:number,mat:Material) {
+  const root=obj(parent,['Clue • Meera untouched noodles','Clue • Uncle two chai cups','Clue • Aunty extra plate'][index],
+    new vec3((index-1)*6.6,0.45,(index===1?-3.7:-1)+5.4));
+  const base=new Geometry();
+  // A low desk / tea table / dining table, shared scale but distinct contents.
+  base.box(0,1,0,4.4,0.24,2.5,C.terracotta);
+  for(const x of [-1.7,1.7])for(const z of [-0.8,0.8])base.box(x,0.45,z,0.18,0.9,0.18,C.terracotta);
+  const actionProp=obj(root,['Untouched noodle bowl','Second cup waiting','One more place setting'][index],new vec3(-0.9,1.15,0.1));
+  const studyBook=obj(root,'A study book put aside',new vec3(0.9,1.18,0));
+  const spareChair=obj(root,'An empty chair pulled closer',new vec3(-1.1,0.6,2));
+  const detail=new Geometry();
+  if(index===0){
+    // Open exercise book and pencil beside a visibly full, untouched bowl.
+    const pages=new Geometry().box(0,0,0,1.8,0.12,1.6,C.cream).box(0,0.08,0,0.06,0.05,1.6,C.pink);
+    for(let line=0;line<3;line++)pages.box(0,0.08,-0.5+line*0.4,1.45,0.035,0.035,C.blue);
+    pages.box(0.95,0.1,0,0.09,0.09,1.6,C.gold).build(studyBook,'Exercise book and pencil',mat);
+    detail.lathe([[0,0],[0.45,0],[0.8,0.65],[0.68,0.65],[0.35,0.13],[0,0.13]],C.cream,20);
+    detail.lathe([[0,0],[0.68,0],[0,0.03]],C.gold,20,0,0.53,0);
+    for(let strand=0;strand<5;strand++)detail.box(-0.38+strand*0.18,0.58,0,0.07,0.04,0.85,C.cream);
+  }else if(index===1){
+    const cup=(g:Geometry,x:number,y:number,z:number)=>{
+      g.lathe([[0,0],[0.35,0],[0.49,0.75],[0.37,0.75],[0.25,0.17],[0,0.17]],C.gold,18,x,y,z);
+      g.lathe([[0,0],[0.38,0],[0,0.03]],C.dark,18,x,y+0.61,z);
+      g.box(x+0.48,y+0.39,z,0.28,0.35,0.17,C.gold);
+    };
+    cup(base,0.9,1.15,0.1);cup(detail,0,0,0);
+    // An empty chair makes the second cup's invitation legible without text.
+    new Geometry().box(0,0,0,1.3,0.15,1,C.cream).box(0,0.7,0.4,1.3,1.4,0.12,C.cream)
+      .build(spareChair,'A seat kept for someone',mat);
+  }else{
+    base.lathe([[0,0],[0.78,0],[0.9,0.12],[0.78,0.2],[0,0.2]],C.steel,20,0.95,1.15,0);
+    base.sphere(0.95,1.5,0,0.48,C.gold,12,7);
+    detail.lathe([[0,0],[0.78,0],[0.9,0.12],[0.78,0.2],[0,0.2]],C.steel,20);
+    detail.box(0.95,0.08,0,0.12,0.12,1.4,C.steel);
+  }
+  base.build(root,'Household detail',mat);detail.build(actionProp,'Something left for someone',mat);
+  const responseGlow=new Geometry().lathe([[1.9,0],[2.05,0.07],[1.9,0.14]],C.light,28)
+    .build(root,'A detail noticed',mat);
+  responseGlow.getTransform().setLocalPosition(new vec3(0,0.04,0));responseGlow.enabled=false;
+  return {root,actionProp,responseGlow,studyBook,spareChair};
+}
+export function building(parent:SceneObject,index:number,mat:Material):{root:SceneObject,door:SceneObject,resident:SceneObject,window:SceneObject,accent:SceneObject,arm:SceneObject} {
   const root=obj(parent,['Meera • Exam tomorrow','Iyer Uncle • One extra cup','Sharma Home • Dinner for everyone'][index],new vec3((index-1)*6.6,0,index===1?-3.7:-1));
   const col=[C.teal,C.pink,C.gold][index],h=[10,12,9][index];const g=new Geometry();
   g.box(0,h/2,0,5.2,h,4.3,col).box(0,h+0.18,0,5.8,0.4,4.9,C.cream);
@@ -83,8 +126,9 @@ export function building(parent:SceneObject,index:number,mat:Material):{root:Sce
   window.getTransform().setLocalPosition(new vec3(-1.35,5.1,2.40));window.enabled=false;
   const resident=obj(root,'Tiny resident',new vec3(0,0.5,3.4));
   new Geometry().sphere(0,1.4,0,0.35,C.skin).lathe([[0,0],[0.44,0],[0.3,1],[0,1]],index===0?C.blue:index===1?C.white:C.pink,10).box(-0.18,-0.22,0,0.17,0.5,0.18,C.dark).box(0.18,-0.22,0,0.17,0.5,0.18,C.dark).build(resident,'Kurta and face',mat);
-  new Geometry().box(0.56,0.8,0,0.55,0.15,0.16,C.skin).build(resident,'Waving arm',mat);
+  const arm=obj(resident,'An arm reaching out',new vec3(0.3,0.8,0));
+  new Geometry().box(0.27,0,0,0.55,0.15,0.16,C.skin).build(arm,'A small welcoming gesture',mat);
   const accent=new Geometry().box(0,0.62,3.3,5.6,0.13,0.18,C.light).box(-2.7,1,2.7,0.12,0.8,0.12,C.light).box(2.7,1,2.7,0.12,0.8,0.12,C.light).build(root,'Doorstep invitation glow',mat);
   accent.enabled=false;
-  return {root,door,resident,window,accent};
+  return {root,door,resident,window,accent,arm};
 }

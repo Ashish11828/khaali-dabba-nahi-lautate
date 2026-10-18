@@ -7,15 +7,16 @@ A spatial Indian storytelling game for SPECS 27, authored in Lens Studio 5.24.1.
 1. On glasses, look at a clear, flat table within arm's reach. Hold still, then pinch when the placement ring appears. Release before opening the dabba.
 2. Target the steel lid and pinch. Read Sharma Aunty's note.
 3. Pinch all three besan laddoos. The miniature mohalla rises from the empty dabba.
-4. Pinch each colorful home to meet Meera, Iyer Uncle, and Sharma Aunty's family.
-5. Pick up the food plate, thank-you note, or chai invitation. Carry it into the dabba and release. The golden ring also provides a targeted placement action.
-6. Pinch the raised lid to return your gesture. Watch the matching ending, then pinch the diya to replay.
+4. Notice a household clue: Meera's untouched noodles beside her study book, Iyer Uncle's two cups and empty chair, or Sharma Aunty's extra plate. Pinch it for a personal response and warm ring. Gifts appear after your first discovery; exploring the other clues is optional. Pinch the upper part of a house for a hint.
+5. Pick up food, a note, or a chai invitation. Every gift is valid for every resident. Carry it into the dabba and release; the golden ring also provides a targeted placement action.
+6. Pinch a glowing doorstep to choose the recipient. A warm dotted trail and the person's name confirm your choice. Pinch another doorstep to change it. The lid cannot send the dabba until you have chosen a person.
+7. Pinch the raised lid. Meera puts her book aside, Uncle pulls the spare chair closer, or Aunty moves the extra place setting toward you. Your chosen resident responds, then Aunty acknowledges the gesture before the neighborhood celebration. A cup comes toward you: “Tum bhi baitho.” The diya appears with the closing line and starts a new playthrough.
 
 Normal play is untimed; allow about 3–4 minutes to read and explore. SIK supplies hand targeting and pinch on glasses and mouse interaction in Editor. No eye-tracking claim is made.
 
 ## DJXHack demo
 
-Enable `demoMode` on `KhaaliDabbaGame` for an approximately 80-second automatic story using the chai ending. Disable for interactive play. The interactive opening remains the primary demo: lid, three laddoos, then the miniature reveal. Demo mode is an editorial presentation, not proof of hand interaction or real table detection.
+Enable `demoMode` on `KhaaliDabbaGame` for an approximately 85-second automatic story using a chai invitation for Iyer Uncle. Disable for interactive play. The interactive opening remains the primary demo: lid, three laddoos, then the miniature reveal. Demo mode is an editorial presentation, not proof of hand interaction or real table detection.
 
 ## Authoring
 
